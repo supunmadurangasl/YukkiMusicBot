@@ -273,31 +273,26 @@ async def pmpermit_func(answers, user_id, victim):
         [
             [
                 InlineKeyboardButton(
-                    text=f"Add {MUSIC_BOT_NAME} To Your Group",
+                    text=f"➕Add {MUSIC_BOT_NAME} To Your Group➕",
                     url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
                 ),
             ],
             [
                 InlineKeyboardButton(
-                    text="To Scam You",
-                    callback_data=f"pmpermit to_scam_you a",
+                    text="support chat",
+                    url=f"https://t.me/slbotzone",
                 ),
                 InlineKeyboardButton(
-                    text="For Promotion", callback_data=f"pmpermit for_pro a"
-                ),
-            ],
-            [
-                InlineKeyboardButton(
-                    text="Approve me", callback_data=f"pmpermit approve_me a"
-                ),
-                InlineKeyboardButton(
-                    text="Approve", callback_data=f"pmpermit approve {victim}"
+                    text="update channel", url=f"https://t.me/szteambots"
                 ),
             ],
             [
                 InlineKeyboardButton(
-                    "Block & Delete", callback_data="pmpermit block {victim}"
-                )
+                    text="Rose News", url=f"https://t.me/szroseupdates"
+                ),
+                InlineKeyboardButton(
+                    text="Start Pm", url=f"https://t.me/szrosbot"
+                ),
             ],
         ]
     )
