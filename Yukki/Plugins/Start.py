@@ -47,7 +47,7 @@ async def welcome(_, message: Message):
         await add_served_chat(chat_id)
     if chat_id in await blacklisted_chats():
         await message.reply_text(
-            f"Hushh, Your chat group[{message.chat.title}] has been blacklisted!\n\nAsk any Sudo User to whitelist your chat"
+            f"Your chat group[{message.chat.title}] has been blacklisted!\n\nAsk any Sudo User to whitelist your chat"
         )
         await app.leave_chat(chat_id)
     for member in message.new_chat_members:
