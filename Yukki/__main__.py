@@ -126,7 +126,7 @@ I'm Telegram Voice Chat Audio with some useful features.
 All commands can be used with: / """
 
 
-@app.on_message(filters.command("help") & filters.private)
+@app.on_message(filters.command("kkk") & filters.private)
 async def help_command(_, message):
     text, keyboard = await help_parser(message.from_user.mention)
     await app.send_message(message.chat.id, text, reply_markup=keyboard)
@@ -177,26 +177,26 @@ async def start_command(_, message):
                 link = result["link"]
                 published = result["publishedTime"]
             searched_text = f"""
-🔍__**Video Track Information**__
+**Video Track Information**
 
 ❇️**Title:** {title}
 
-⏳**Duration:** {duration} Mins
-👀**Views:** `{views}`
-⏰**Published Time:** {published}
-🎥**Channel Name:** {channel}
-📎**Channel Link:** [Visit From Here]({channellink})
-🔗**Video Link:** [Link]({link})
+★**Duration:** {duration} Mins
+★**Views:** `{views}`
+★**Published Time:** {published}
+★**Channel Name:** {channel}
+★**Channel Link:** [Visit From Here]({channellink})
+★**Video Link:** [Link]({link})
 
-⚡️ __Searched Powered By {BOT_NAME}t__"""
+💫Powered By {BOT_NAME}"""
             key = InlineKeyboardMarkup(
                 [
                     [
                         InlineKeyboardButton(
-                            text="🎥 Watch Youtube Video", url=f"{link}"
+                            text="🔥 Watch Youtube Video", url=f"{link}"
                         ),
                         InlineKeyboardButton(
-                            text="🔄 Close", callback_data="close"
+                            text="🗑 Close 🗑", callback_data="close"
                         ),
                     ],
                 ]
