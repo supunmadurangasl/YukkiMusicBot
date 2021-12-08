@@ -39,10 +39,10 @@ async def bot_sys_stats():
     mem = psutil.virtual_memory().percent
     disk = psutil.disk_usage("/").percent
     stats = f"""
-**Uptime:** {get_readable_time((bot_uptime))}
-**CPU:** {cpu}%
-**RAM:** {mem}%
-**Disk: **{disk}%"""
+❖**Uptime:** {get_readable_time((bot_uptime))}
+❖**CPU:** {cpu}%
+❖**RAM:** {mem}%
+❖**Disk: **{disk}%"""
     return stats
 
 
@@ -60,9 +60,9 @@ async def gstats(_, message):
     end = datetime.now()
     resp = (end - start).microseconds / 1000
     smex = f"""
-[•]<u>**General Stats**</u>
+❖<u>**General Stats**</u>
     
-Ping: `⚡{resp} ms`
+Ping: `{resp} ms`
 {uptime}
     """
     await response.edit_text(smex, reply_markup=stats1)
@@ -88,13 +88,13 @@ async def stats_markup(_, CallbackQuery):
         smex = f"""
 [•]<u>**System Stats**</u>
 
-**Yukki Uptime:** {uptime}
-**System Proc:** Online
-**Platform:** {sc}
-**Architecture:** {arch}
-**Ram:** {ram}
-**Python Ver:** {pyver.split()[0]}
-**Pyrogram Ver:** {pyrover}"""
+❖**Uptime:** {uptime}
+❖**System Proc:** Online
+❖**Platform:** {sc}
+❖**Architecture:** {arch}
+❖**Ram:** {ram}
+❖**Python Ver:** {pyver.split()[0]}
+❖**Pyrogram Ver:** {pyrover}"""
         await CallbackQuery.edit_message_text(smex, reply_markup=stats2)
     if command == "sto_stats":
         await CallbackQuery.answer(
@@ -110,9 +110,9 @@ async def stats_markup(_, CallbackQuery):
         smex = f"""
 [•]<u>**Storage Stats**</u>
 
-**Storage Avail:** {total[:4]} GiB 
-**Storage Used:** {used[:4]} GiB
-**Storage Left:** {free[:4]} GiB"""
+❖**Storage Avail:** {total[:4]} GiB 
+❖**Storage Used:** {used[:4]} GiB
+❖**Storage Left:** {free[:4]} GiB"""
         await CallbackQuery.edit_message_text(smex, reply_markup=stats3)
     if command == "bot_stats":
         await CallbackQuery.answer("Getting Bot Stats...", show_alert=True)
@@ -133,10 +133,10 @@ async def stats_markup(_, CallbackQuery):
         smex = f"""
 [•]<u>**Bot Stats**</u>
 
-**Modules Loaded:** {modules_loaded}
-**GBanned Users:** {blocked}
-**Sudo Users:** {j}
-**Served Chats:** {len(served_chats)}"""
+❖**Modules Loaded:** {modules_loaded}
+❖**GBanned Users:** {blocked}
+❖**Sudo Users:** {j}
+❖**Served Chats:** {len(served_chats)}"""
         await CallbackQuery.edit_message_text(smex, reply_markup=stats4)
     if command == "mongo_stats":
         await CallbackQuery.answer(
@@ -159,15 +159,15 @@ async def stats_markup(_, CallbackQuery):
         smex = f"""
 [•]<u>**MongoDB Stats**</u>
 
-**Mongo Uptime:** {mongouptime[:4]} Days
-**Version:** {mver}
-**Database:** {database}
-**Provider:** {provider}
-**DB Size:** {datasize[:6]} Mb
-**Storage:** {storage} Mb
-**Collections:** {collections}
-**Keys:** {objects}
-**Total Queries:** `{query}`"""
+❖**Mongo Uptime:** {mongouptime[:4]} Days
+❖**Version:** {mver}
+❖**Database:** {database}
+❖**Provider:** {provider}
+❖**DB Size:** {datasize[:6]} Mb
+❖**Storage:** {storage} Mb
+❖**Collections:** {collections}
+❖**Keys:** {objects}
+❖**Total Queries:** `{query}`"""
         await CallbackQuery.edit_message_text(smex, reply_markup=stats5)
     if command == "assis_stats":
         await CallbackQuery.answer(
@@ -192,11 +192,11 @@ async def stats_markup(_, CallbackQuery):
         smex = f"""
 [•]<u>Assistant Stats</u>
 
-**Dialogs:** {total_ub}
-**Groups:** {groups_ub} 
-**Channels:** {channels_ub} 
-**Bots:** {bots_ub}
-**Users:** {privates_ub}"""
+❖**Dialogs:** {total_ub}
+❖**Groups:** {groups_ub} 
+❖**Channels:** {channels_ub} 
+❖**Bots:** {bots_ub}
+❖**Users:** {privates_ub}"""
         await CallbackQuery.edit_message_text(smex, reply_markup=stats6)
     if command == "gen_stats":
         start = datetime.now()
