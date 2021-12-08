@@ -171,15 +171,14 @@ def setting_markup():
         ],
         [
             InlineKeyboardButton(
-                text="👥 Authorized Users", callback_data="AU"
+                text="👮‍♀️ Authorized Users", callback_data="AU"
             ),
             InlineKeyboardButton(
-                text="💻 Dashboard", callback_data="Dashboard"
+                text="🧰 Dashboard", callback_data="Dashboard"
             ),
         ],
         [
-            InlineKeyboardButton(text="✖️ Close", callback_data="close"),
-            InlineKeyboardButton(text="🔙 Go Back", callback_data="okaybhai"),
+            InlineKeyboardButton(text="🗑 Close 🗑", callback_data="close")
         ],
     ]
     return f"🔧  **{MUSIC_BOT_NAME} Settings**", buttons
