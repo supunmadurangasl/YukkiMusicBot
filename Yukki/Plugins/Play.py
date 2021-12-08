@@ -24,8 +24,18 @@ from Yukki.Utilities.url import get_url
 from Yukki.Utilities.youtube import (get_yt_info_id, get_yt_info_query,
                                      get_yt_info_query_slider)
 
+from pyrogram.errors import UserAlreadyParticipant
+from pyrogram.errors import UserNotParticipant, ChatAdminRequired, UsernameNotOccupied
+
 loop = asyncio.get_event_loop()
 
+JOIN_ASAP = f"⛔️** Access Denied **⛔️\n\n🙋‍♂️ Hey There , You Must Join @szteambots Telegram Channel To Use This BOT. So, Please Join it & Try Again🤗. Thank You 🤝"
+
+FSUBB = InlineKeyboardMarkup(
+        [[
+        InlineKeyboardButton(text="Sz Team Bots <sz/>", url=f"https://t.me/szteambots") 
+        ]]
+    )
 
 @app.on_message(
     filters.command(["play", f"play@{BOT_USERNAME}"]) & filters.group
@@ -34,6 +44,13 @@ loop = asyncio.get_event_loop()
 @PermissionCheck
 @AssistantAdd
 async def play(_, message: Message):
+    try:
+        await message._client.get_chat_member(int("-1001325914694"), message.from_user.id)
+    except UserNotParticipant:
+        await message.reply_text(
+        text=JOIN_ASAP, disable_web_page_preview=True, reply_markup=FSUBB
+    )
+        return   
     await message.delete()
     if message.chat.id not in db_mem:
         db_mem[message.chat.id] = {}
