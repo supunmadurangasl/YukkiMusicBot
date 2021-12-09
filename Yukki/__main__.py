@@ -238,14 +238,14 @@ async def shikhar(_, CallbackQuery):
     await CallbackQuery.message.edit(text, reply_markup=keyboard)
 
 
-@app.on_callback_query(filters.regex(r"hel(.*?)"))
-async def help_button(client, query):
-    home_match = re.match(r"help_home\((.+?)\)", query.data)
-    mod_match = re.match(r"help_module\((.+?)\)", query.data)
-    prev_match = re.match(r"help_prev\((.+?)\)", query.data)
-    next_match = re.match(r"help_next\((.+?)\)", query.data)
-    back_match = re.match(r"help_back", query.data)
-    create_match = re.match(r"help_create", query.data)
+@app.on_callback_query(filters.regex("hel"))
+async def he(client, query):
+    he_match = re.match(r"help_home\((.+?)\)", query.data)
+    md_match = re.match(r"help_module\((.+?)\)", query.data)
+    pv_match = re.match(r"help_prev\((.+?)\)", query.data)
+    net_match = re.match(r"help_next\((.+?)\)", query.data)
+    bk_match = re.match(r"help_back", query.data)
+    crate_match = re.match(r"help_create", query.data)
     top_text = f"""Hello {query.from_user.first_name},
 
 Click on the buttons for more information.
@@ -278,7 +278,7 @@ All commands can be used with: /
             reply_markup=key,
             disable_web_page_preview=True,
         )
-    elif home_match:
+    elif he_match:
         out = private_panel()
         await app.send_message(
             query.from_user.id,
@@ -286,7 +286,7 @@ All commands can be used with: /
             reply_markup=InlineKeyboardMarkup(out[1]),
         )
         await query.message.delete()
-    elif prev_match:
+    elif pv_match:
         curr_page = int(prev_match.group(1))
         await query.message.edit(
             text=top_text,
@@ -296,7 +296,7 @@ All commands can be used with: /
             disable_web_page_preview=True,
         )
 
-    elif next_match:
+    elif nt_match:
         next_page = int(next_match.group(1))
         await query.message.edit(
             text=top_text,
@@ -306,7 +306,7 @@ All commands can be used with: /
             disable_web_page_preview=True,
         )
 
-    elif back_match:
+    elif bk_match:
         await query.message.edit(
             text=top_text,
             reply_markup=InlineKeyboardMarkup(
@@ -315,7 +315,7 @@ All commands can be used with: /
             disable_web_page_preview=True,
         )
 
-    elif create_match:
+    elif crte_match:
         text, keyboard = await help_parser(query)
         await query.message.edit(
             text=text,
