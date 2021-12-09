@@ -169,7 +169,7 @@ def secondary_markup(videoid, user_id):
         ],
         [
             InlineKeyboardButton(
-                text="Updates", url=f"https://t.me/szroseupdates"
+                text="💁‍♀️ Rose News", url=f"https://t.me/szroseupdates"
             ),
             InlineKeyboardButton(text="👨‍💻 Menu", callback_data=f"other {videoid}|{user_id}"),
         ],
@@ -200,7 +200,7 @@ def primary_markup(videoid, user_id, current_time, total_time):
         ],
         [
             InlineKeyboardButton(
-                text="Updates", url=f"https://t.me/szroseupdates"
+                text="💁‍♀️ Rose News", url=f"https://t.me/szroseupdates"
             ),
             InlineKeyboardButton(text="👨‍💻 Menu", callback_data=f"other {videoid}|{user_id}"),
         ],
@@ -228,7 +228,7 @@ def timer_markup(videoid, user_id, current_time, total_time):
         ],
         [
             InlineKeyboardButton(
-                text="Updates", url=f"https://t.me/szroseupdates"
+                text="💁‍♀️ Rose News", url=f"https://t.me/szroseupdates"
             ),
             InlineKeyboardButton(text="👨‍💻 Menu", callback_data=f"other {videoid}|{user_id}"),
         ],
@@ -259,7 +259,7 @@ def audio_markup(videoid, user_id, current_time, total_time):
         ],
         [
             InlineKeyboardButton(
-                text="Updates", url=f"https://t.me/szroseupdates"
+                text="💁‍♀️ Rose News", url=f"https://t.me/szroseupdates"
             ),
             InlineKeyboardButton(text="👨‍💻 Menu", callback_data=f"other {videoid}|{user_id}"),
         ],
@@ -287,7 +287,7 @@ def audio_timer_markup_start(videoid, user_id, current_time, total_time):
         ],
         [
             InlineKeyboardButton(
-                text="Updates", url=f"https://t.me/szroseupdates"
+                text="💁‍♀️ Rose News", url=f"https://t.me/szroseupdates"
             ),
             InlineKeyboardButton(text="👨‍💻 Menu", callback_data=f"other {videoid}|{user_id}"),
         ],
