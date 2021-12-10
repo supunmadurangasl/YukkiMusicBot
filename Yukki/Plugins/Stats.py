@@ -46,7 +46,7 @@ async def bot_sys_stats():
     return stats
 
 
-@app.on_message(filters.command("stats") & ~filters.edited)
+@app.on_message(filters.command("gstats") & ~filters.edited)
 async def gstats(_, message):
     start = datetime.now()
     try:
