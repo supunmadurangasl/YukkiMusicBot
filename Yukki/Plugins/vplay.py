@@ -8,7 +8,7 @@ import asyncio
 
 from driver.filters import command, other_filters
 from driver.queues import QUEUE, add_to_queue
-from Yukki.Core.Clients.cli import userbot as call_py, app as user
+from driver.veez import call_py, user
 
 
 
