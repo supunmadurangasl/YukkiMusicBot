@@ -8,7 +8,8 @@ import asyncio
 
 from driver.filters import command, other_filters
 from driver.queues import QUEUE, add_to_queue
-from driver.veez import call_py, user
+from Yukki.Core.Clients.cli import call_py, app as user
+
 
 
 from pyrogram import Client
