@@ -26,7 +26,7 @@ from Yukki.Utilities.thumbnails import gen_thumb
 from Yukki.Utilities.timer import start_timer
 from Yukki.Utilities.youtube import get_yt_info_id
 
-pytgcalls = PyTgCalls(userbot)
+pytgcalls = userbot
 
 
 @pytgcalls.on_kicked()
