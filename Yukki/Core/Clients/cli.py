@@ -9,8 +9,8 @@ app = Client(
     bot_token=BOT_TOKEN,
 )
 
-bot = STRING(
-    SESSION_NAME,
+bot = Client(
+    STRING,
     api_id=API_ID,
     api_hash=API_HASH,
 )
