@@ -75,6 +75,7 @@ async def initiate_bot():
         console.print("┌ [red]Booting Up The Clients...\n")
         await app.start()
         await userbot.start()
+        await szbot.start()
         console.print("└ [green]Clients Booted Successfully!")
         initial = await startup_send_new("Starting Yukki Music Bot...")
         await asyncio.sleep(0.5)
