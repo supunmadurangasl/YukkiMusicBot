@@ -9,5 +9,10 @@ app = Client(
     bot_token=BOT_TOKEN,
 )
 
-bot = Client(STRING, API_ID, API_HASH)
+bot = STRING(
+    SESSION_NAME,
+    api_id=API_ID,
+    api_hash=API_HASH,
+)
+
 userbot = PyTgCalls(bot, overload_quiet_mode=True)
