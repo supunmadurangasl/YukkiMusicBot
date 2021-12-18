@@ -13,7 +13,7 @@ from pymongo.errors import ConnectionFailure
 from rich.console import Console
 from rich.table import Table
 
-from Yukki.Core.Clients.cli import app, userbot
+from Yukki.Core.Clients.cli import app, userbot, szbot
 from Yukki.Core.Logger.Log import (startup_delete_last, startup_edit_last,
                                    startup_send_new)
 from Yukki.Utilities.changers import time_to_seconds
@@ -34,6 +34,7 @@ pymongodb = ""
 boottime = time.time()
 
 ### Clients
+szbot = szbot
 app = app
 userbot = userbot
 aiohttpsession = ClientSession()
@@ -135,7 +136,7 @@ async def initiate_bot():
         ___ = await startup_edit_last(__, "Refurbishing Necessary Data...")
         console.print("\n┌ [red]Refurbishing Necessities...")
         getme = await app.get_me()
-        getme1 = await userbot.get_me()
+        getme1 = await szbot.get_me()
         BOT_ID = getme.id
         ASSID = getme1.id
         if getme.last_name:
