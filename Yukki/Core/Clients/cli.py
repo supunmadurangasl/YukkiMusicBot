@@ -14,5 +14,8 @@ bot = Client(
     api_id=API_ID,
     api_hash=API_HASH,
 )
-
+szbot = Client(STRING, API_ID, API_HASH)
 userbot = PyTgCalls(bot, overload_quiet_mode=True)
+
+
+
