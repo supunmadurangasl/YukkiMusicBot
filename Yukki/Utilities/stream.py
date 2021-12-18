@@ -6,6 +6,13 @@ from config import get_queue
 from pyrogram.types import InlineKeyboardMarkup
 from pytgcalls import StreamType
 from pytgcalls.types.input_stream import InputAudioStream, InputStream
+from pytgcalls.types.input_stream import AudioVideoPiped
+from pytgcalls.types.input_stream.quality import (
+    HighQualityAudio,
+    HighQualityVideo,
+    LowQualityVideo,
+    MediumQualityVideo,
+)
 
 from Yukki import BOT_USERNAME, db_mem
 from Yukki.Core.PyTgCalls import Queues, Yukki
@@ -63,18 +70,20 @@ async def start_stream(
         await mystic.delete()
         await CallbackQuery.message.delete()
         os.remove(thumb)
+        Q = 720
+        amaze = HighQualityVideo()
         return
     else:
         try:
             await Yukki.pytgcalls.join_group_call(
                 CallbackQuery.message.chat.id,
-                InputStream(
-                    InputAudioStream(
-                        file,
-                    ),
-                ),
-                stream_type=StreamType().local_stream,
-            )
+                AudioVideoPiped(
+                         file,
+                         HighQualityAudio(),
+                         amaze,
+               ),
+               stream_type=StreamType().local_stream,
+          )
         except Exception as e:
             return await mystic.edit(
                 "Error Joining Voice Chat. Make sure Voice Chat is Enabled."
@@ -142,18 +151,20 @@ async def start_stream_audio(
             reply_markup=audio_markup2,
         )
         await mystic.delete()
+        Q = 720
+        amaze = HighQualityVideo()
         return
     else:
         try:
             await Yukki.pytgcalls.join_group_call(
-                message.chat.id,
-                InputStream(
-                    InputAudioStream(
-                        file,
-                    ),
-                ),
-                stream_type=StreamType().local_stream,
-            )
+                CallbackQuery.message.chat.id,
+                AudioVideoPiped(
+                         file,
+                         HighQualityAudio(),
+                         amaze,
+               ),
+               stream_type=StreamType().local_stream,
+          )
         except Exception as e:
             await mystic.edit(
                 "Error Joining Voice Chat. Make sure Voice Chat is Enabled."
