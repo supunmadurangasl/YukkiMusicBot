@@ -43,7 +43,7 @@ __HELP__ = f"""
 flood = {}
 
 
-@userbot.on_message(
+@szbot.on_message(
     filters.private
     & filters.incoming
     & ~filters.service
@@ -82,7 +82,7 @@ async def awaiting_message(_, message):
     )
 
 
-@userbot.on_message(
+@szbot.on_message(
     filters.command("approve", prefixes=ASSISTANT_PREFIX)
     & filters.user(SUDOERS)
     & ~filters.via_bot
@@ -99,7 +99,7 @@ async def pm_approve(_, message):
     await eor(message, text="User is approved to pm")
 
 
-@userbot.on_message(
+@szbot.on_message(
     filters.command("disapprove", prefixes=ASSISTANT_PREFIX)
     & filters.user(SUDOERS)
     & ~filters.via_bot
@@ -123,7 +123,7 @@ async def pm_disapprove(_, message):
     await eor(message, text="User is disapproved to pm")
 
 
-@userbot.on_message(
+@szbot.on_message(
     filters.command("block", prefixes=ASSISTANT_PREFIX)
     & filters.user(SUDOERS)
     & ~filters.via_bot
@@ -136,7 +136,7 @@ async def block_user_func(_, message):
     await userbot.block_user(user_id)
 
 
-@userbot.on_message(
+@szbot.on_message(
     filters.command("unblock", prefixes=ASSISTANT_PREFIX)
     & filters.user(SUDOERS)
     & ~filters.via_bot
@@ -152,7 +152,7 @@ async def unblock_user_func(_, message):
 
 
     
-@userbot.on_message(
+@szbot.on_message(
     filters.command("pfp", prefixes=ASSISTANT_PREFIX)
     & filters.user(SUDOERS)
     & ~filters.via_bot
@@ -168,7 +168,7 @@ async def set_pfp(_, message):
         await eor(message, text=e)
     
     
-@userbot.on_message(
+@szbot.on_message(
     filters.command("bio", prefixes=ASSISTANT_PREFIX)
     & filters.user(SUDOERS)
     & ~filters.via_bot
